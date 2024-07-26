@@ -1,0 +1,9 @@
+SQL-
+Structred query language.It is non-procedural query language.used for creating managing manipulating database obj such as table or views.
+Sql commands are divided into following categories:
+1.DDL:Data definition language.
+	create:used to create a table,view,index
+	alter:used to add/drop col, chnage data type of col, add/remove constraint
+	drop:delete table with all rows & columns
+	truncate:remove all the entries from table,cannot hold back truncate statement
+2.DML

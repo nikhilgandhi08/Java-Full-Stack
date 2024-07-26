@@ -1,0 +1,110 @@
+create table product
+(
+	proid number(5) primary key,
+	proname varchar2(20) not null,
+	prodprice number(5) check(prodprice>0),
+	prodqty number(5) check(prodqty>0),
+	prodcat varchar2(20) default 'books'
+);
+
+
+CONSTRAINTS AND REFERENCE
+
+create table dept
+(
+	deptno number(3) constraint  dept_deptno_pk primary key,
+	deptname varchar2(10) not null,
+	loc varchar2(10)
+);
+
+
+create table emp
+(	
+	empid number(3) constraint emp_empid_pk primary key,
+	ename varchar2(10),
+	dob date,
+	deptno number(2) references dept(deptno)
+);	
+
+create table dept3
+(
+	dept_no number(2) constraint pk_deptno3 primary key,
+	dept_name varchar2(10),
+	loc varchar2(20),
+	
+);
+
+create table emp3
+(
+	emp_no number(3) constraint pk_eid3 primary key,
+	ename varchar2(20) not null,
+	grade char(3) default 'A',
+	dob date check(dob<='1-Jan-2006'),
+	email_id varchar2(20) unique,
+	dept_no number(2) refrences dept3(dept_no)
+);
+
+create table address
+(
+	city varchar2(10),
+	state varchar2(10),
+	pincode number(5),
+	emp_no number(5) constraint emp_no references emp
+);
+
+==================================================================================================================================
+LIBRARY
+
+
+
+ALTER COMMANDS
+=========================================================================================================================
+create table test
+(
+	rno number(5) primary key,
+	fname varchar2(10),
+	lname varchar2(10)
+);
+
+alter table test modify(grade varchar(5));
+alter table test rename column rno to roll_no;
+alter table test add constraint test_email_uk unique(email);
+alter table test drop constraint test_email_uk;
+ALTER TABLE TEST DISABLE CONSTRAINT TEST_EMAIL_UK;
+ALTER TABLE TEST ENABLE CONSTRAINT TEST_EMAIL_UK;
+=============================================================================================================================
+create table px
+(
+	c1 number(5) primary key,
+	c2 number(5) ,
+	c3 number(5)	
+)
+
+create table py
+(
+	p1 number references px(c1),
+	p2 number
+);
+
+alter table px drop column c1 cascade constraints;
+
+=============================================================================================================================
+
+create sequence test_seq
+start with 10
+increment by 1
+maxvalue 15
+nocache
+nocycle
+
+insert into test values(test_seq.nextval,'aaa','aaa','1-jan-2012','abc@gmail.com');
+insert into test values(test_seq.nextval,'aaa','aaa','1-jan-2012','A','abc@gmail.com');
+
+
+
+
+
+
+
+
+

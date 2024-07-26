@@ -1,0 +1,115 @@
+Day-3(CW)
+
+GROUP BY:-
+
+select count(deptno),min(salary),max(salary),avg(salary),sum(salary) from employee;
+select count(deptno),min(salary),max(salary),avg(salary),sum(salary) from employee group by deptno;
+select count(deptno),min(salary),max(salary),avg(salary),sum(salary) from employee group by deptno order by deptno;
+select count(deptno),min(salary),max(salary),avg(salary),sum(salary) from employee group by deptno order by deptnon desc;
+==================================================================================================================================
+
+HAVING-very similiar to where clause except for argegate
+==================================================================================================================================
+
+CASE:-
+
+select empid,fname,
+CASE deptno
+	 WHEN 10 THEN 'Pune'
+	 WHEN 20 THEN 'Chennai'
+	 WHEN 30 THEN 'Mumbai'
+	 ELSE 'Banglore'
+ END from employee;
+==================================================================================================================================
+
+DECODE:-
+
+select empno,ename,deptno,DECODE(deptno,10,'Green',20,'Orange','red')from emp;
+==================================================================================================================================
+
+CASE:-
+
+select empid,ename ,
+CASE deptno 
+	WHEN 10 THEN 'Pune',  
+	WHEN 20 THEN 'Chennai',   
+	ELSE 'Bangalore' 
+END from emp;
+==================================================================================================================================
+
+ROLL UP:-
+
+SELECT department_id, SUM(salary) AS salary
+	FROM employees
+	GROUP BY ROLLUP(department_id);
+
+SELECT department_id,manager_id,SUM(salary) AS salary
+	FROM employees
+	GROUP BY ROLLUP(department_id,manager_id);
+
+SELECT department_id,manager_id,SUM(salary) AS salary
+	FROM employees
+	GROUP BY ROLLUP(department_id,manager_id) order by department_id desc;
+==================================================================================================================================
+
+CUBE:-
+
+SELECT department_id,manager_id,SUM(salary) AS salary
+	FROM employees
+	GROUP BY cube(department_id,manager_id);
+
+SELECT department_id,manager_id,SUM(salary) AS salary
+	FROM employees
+	GROUP BY cube(department_id,manager_id);
+==================================================================================================================================
+
+JOINS:-
+
+create table dept2(deptno number(3),dname varchar2(10),dloc varchar2(10));
+insert into dept2 values(10,'Dev','Pune');
+insert into dept2 values(20,'Testing','Mumbai');
+insert into dept2 values(30,'Hr','Chennai');
+insert into dept2 values(50,'Marketing','Pune');
+
+create table emp2(empid number(3),ename varchar2(10),deptno number(3),esalary number(6));
+insert into emp2 values(101,'Ganesh',10,10000);
+insert into emp2 values(202,'Mahesh',30,20000);
+insert into emp2 values(303,'Suresh',40,5000);
+insert into emp2 values(404,'abcd',60,7999);
+
+1.INNER JOIN
+select d.deptno,d.dname,d.dloc,e.ename,e.esalary FROM dept2 d,emp2 e WHERE d.deptno=e.deptno;
+select d.deptno,d.dname,d.dloc,e.ename,e.esalary FROM dept2 d,emp2 e WHERE e.esalary>10000 and d.deptno=e.deptno;
+select d.deptno,d.dname,d.dloc,e.ename,e.esalary FROM dept2 d,emp2 e WHERE d.deptno=e.deptno order by e.esalary;
+select d.deptno,d.dname,d.dloc,e.ename,e.esalary FROM dept2 d,emp2 e WHERE d.deptno=e.deptno order by e.esalary desc;
+
+
+
+2.LEFT OUTER JOIN
+select d.deptno,d.dname,d.dloc,e.ename,e.esalary FROM dept2 d left outer join emp2 e on d.deptno=e.deptno;
+
+3.RIGHT OUTER JOIN
+select d.deptno,d.dname,d.dloc,e.ename,e.esalary FROM dept2 d right outer join emp2 e on d.deptno=e.deptno;
+
+4.FULL OUTER JOIN
+select d.deptno,d.dname,d.dloc,e.ename,e.esalary FROM dept2 d full outer join emp2 e on d.deptno=e.deptno;
+
+5.SELF JOIN
+select b.ename from emp2 a,emp2 b WHERE a.empn0=101 and a.deptno=b.deptno;
+select b.ename,b.esalary,b.deptno from emp2 a,emp2 b WHERE a.empno=101 and a.deptno=b.deptno;
+====================================================================================================================================
+
+JOIN WITH ORDER BY, GROUP BY :-
+
+select j.job_title,e.job_id,count(e.job_id) from employees e,job j where e.job_id=j.job_id group by e.job_id,j.job_id;
+=========================================================================================================================================
+
+JOIN WITH SUB-QUERY:-
+
+select count(fname) from employee where salary<(select avg(salary)from employee);
+select fname from employee where salary>(select avg(salary) from employee);
+select fname from employee where deptno=(select deptno from dept where deptname='Developer');
+select fname from employee where deptno in (select deptno from dept);
+select fname from employee where deptno=(select deptno from dept where deptname='Developer') order by salary;
+
+

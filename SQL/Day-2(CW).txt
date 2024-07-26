@@ -1,0 +1,7 @@
+Day-6(CW)
+
+
+Function in sql
+
+select nvl(salary,0)+1000 from employee;
+select round(1.5) from dual;

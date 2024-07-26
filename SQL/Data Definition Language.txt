@@ -1,0 +1,28 @@
+Data Definition Language
+
+create table temp
+(
+	empno number(5) primary key,
+	empname varchar2(10)
+);
+
+create sequence emp_seq
+start with 10
+increment by 1
+maxvalue 15
+nocache
+nocycle;
+
+create sequence emp_seq1
+start with 7
+increment by 1
+maxvalue 9
+nocache
+cycle;
+
+create sequence emp_seq2
+start with 7
+increment by 1
+maxvalue 9
+cache
+nocycle;

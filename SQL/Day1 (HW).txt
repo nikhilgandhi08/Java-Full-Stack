@@ -1,0 +1,139 @@
+create table member
+(
+	member_id number(5) constraint m_idpk primary key,
+	mem_name varchar2(10),
+	mem_add varchar2(20),
+	acc_open_date date,
+	membership_type varchar2(20),
+	fees_paid number(4),
+	max_books_allowed number(2),
+	penalty_amount number(7,2)	
+);
+
+1)
+create table books
+(
+	Book_no number(6),
+	Book_name varchar2(10),
+	Author_name varchar2(10),
+	Cost number(7,2),
+	Category varchar2(10)
+);
+
+create table issue
+(
+	Lib_issue_id number(10),
+	Book_no number(6),
+	member_id number(5),
+	issue_date date,
+	return_date date
+);
+
+2)
+select * from member;
+select * from books;
+select * from issue;
+
+3)
+drop table member
+
+4)
+create table member
+(
+	member_id number(5) constraint m_idpk primary key,
+	mem_name varchar2(10),
+	mem_add varchar2(20),
+	acc_open_date date,
+	membership_type varchar2(20),
+	fees_paid number(4),
+	max_books_allowed number(2),
+	penalty_amount number(7,2)	
+);
+
+5)
+alter table member modify (mem_name varchar2(30));
+
+6)
+alter table issue add column reference char(30);
+
+7)
+alter table issue drop column reference;
+
+8)
+alter table issue rename to Lib_issue;
+
+9)
+insert into member values(1,'Richa Sharma','Pune','10-Dec-05','Lifetime',25000,5,50);
+insert into member values(2,'Garima Sen','Pune',sysdate,'Annual',1000,3,null);
+
+10)
+insert into member values(3,'Ajay Sharma','Pune','10-may-04','Lifetime',25000,5,50);
+insert into member values(4,'Girish Sen','Pune',sysdate,'Annual',1000,3,null);
+insert into member values(5,'Ram Sharma','Pune','10-Sep-06','Lifetime',25000,5,100);
+insert into member values(6,'Gaurav Sen','Pune',sysdate,'Annual',1000,3,null);
+insert into member values(7,'Richal Sharma','Pune','10-jun-07','Lifetime',25000,5,50);
+
+11)
+alter table member modify(mem_name varchar2(20));
+
+12)
+insert into member values(8,'Riya Sen','Pune',sysdate,'Annual',1000,110,null);
+
+13)
+create table Member101 as select * from member;
+
+14)
+alter table member add constraint mba_check check(max_books_allowed<100);
+alter table member add constraint mba_check check(max_books_allowed<=1000);
+
+15)
+drop table books;
+
+16)
+create table books
+(
+	Book_no number(6) bno_pk primary key,
+	Book_name varchar2(10) bk_name_nn not null,
+	Author_name varchar2(10),
+	Cost number(7,2),
+	Category varchar2(10) check(Science Fiction,Database,RDBMS,Others);
+);
+
+17)
+insert into books(101,'Let us C','Denis Ritchie',450,'system');
+insert into books(102,'Oracle-Complete Ref','Loni',550,'Database');
+insert into books(103,'Mastering SQL','Loni',250,'Database');
+insert into books(104,'PL SQL -Ref','Scott Urman',750,'Database');
+
+18)
+
+
+19)
+create table book101
+(
+	Book_no number(6) bno_pk primary key,
+	Book_name varchar2(10) bk_name_nn not null,
+	Author_name varchar2(10),
+	Cost number(7,2),
+	Category varchar2(10) check(Science Fiction,Database,RDBMS,Others);
+);
+
+20)
+insert into book101 as select * from books;
+
+21)
+commit
+
+22)
+select * from book101;
+
+23)
+insert into books values(105,'National Geographic','Adis Scott',1000,'Science');
+
+24)
+rollback;
+
+25)
+update books set Book_no=300 and Category='RDBMS' where Book_no=103;
+
+

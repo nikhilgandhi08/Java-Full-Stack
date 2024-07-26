@@ -1,0 +1,57 @@
+Function in sql:
+
+1) NVL(): convert null value to required value
+	Syntax:
+		select nvl(salary,0)+1000 from employee
+2) ROUND():
+                select round(1.5) from dual;
+		select round(12.78,-1) from dual;
+3) TRUNC():
+		select trunc(12.7878) from dual;
+		select trunc(12.7878,2) from dual;
+4) POWER():
+		select power(2,2) from dual;
+5) sqrt():
+		select sqrt(16) from dual;
+6) cos() and sin():
+		select cos(1),sin(1) from dual;
+7) UPPER():
+		select upper('sushant') from dual;
+8) LOWER():
+		select lower('sushant') from dual;
+9) initcap():
+		select initcap('sushant') from dual;
+10) LENGTH():
+		select length('Sushant') from dual;
+11) TRIM():
+		select length(trim('   sushant   ')) from dual; 
+
+     LTRIM(): It remove the left side space.
+		select length(ltrim('   sushant')) from dual;
+
+     RTRIM(): It remove the right side space.
+		select length(rtrim('sushant     ')) from dual;
+13)concat():
+		select concat('sus','hant') from dual;
+		we can join two column also.
+14)instr():
+		select instr('welcome','c',1) from dual;
+
+15)substr():
+		select substr('Welcome',4,4) from dual;
+            Example:
+		    select fname,substr(fname,2,4) from dual;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1) print todays date
+	select sysdate from dual;
+2) select to_char(sysdate,'dd-mm-yy') from dual;
+   select to_char(sysdate,'mm-dd-yy') from dual;
+   select to_char(sysdate,'yy-mm-dd') from dual;
+3) select MONTHS_BETWEEN(sysdate,'29-jan-2003') from dual;
+   select round(MONTHS_BETWEEN(sysdate,'29-jan-2003')) from dual;
+__________________________________________________________________________________________________
+
+Aggregate function:
+
+1) select count(*),min(salary),max(sal),avg(sal),sum(sal) from employees;

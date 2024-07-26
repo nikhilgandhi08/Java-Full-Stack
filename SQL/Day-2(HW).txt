@@ -1,0 +1,10 @@
+Day-5(HW)
+
+select * from employees;
+select first_name,last_name,salary from employees;
+select first_name "fname",last_name "lname",salary "sal" from employees;
+select first_name,last_name,salary from employees where salary>=2000 and salary<=3000;
+select first_name,last_name,salary from employees where salary between 2000 and 3000;
+select first_name,last_name,salary from employees where salary in(2000,3000,2900);
+select first_name,last_name,salary from employees where salary not in(2000,3000,2900);
+select first_name,last_name,salary from employees order by salary;

@@ -1,0 +1,43 @@
+
+ALTER USER hr ACCOUNT UNLOCK;
+
+create table employee(
+	fname varchar2(20),
+	EMAILID VARCHAR2(20),
+	DOB DATE,
+	SALARY FLOAT,
+	DEPTNO NUMBER(5)
+);
+INSERT INTO EMPLOYEE VALUES('Atharva','athu@gmail.com','7-apr-2003',10000,10);
+INSERT INTO EMPLOYEE VALUES('Nikhil','niku@gmail.com','8-may-2003',20000,20);
+INSERT INTO EMPLOYEE VALUES('Suyash','suyu@gmail.com','20-jun-2003',30000,40);
+INSERT INTO EMPLOYEE VALUES('Harsh','harshu@gmail.com','20-nov-2003',40000,50);
+INSERT INTO EMPLOYEE VALUES('Arsh','arshu@gmail.com','20-dec-2003',9999,50);
+INSERT INTO EMPLOYEE VALUES('rshi','rshu@gmail.com','20-dec-2005',19999,20);	
+
+select * from employee;
+select fname,dob,salary from employee;
+select fname "fnme",dob "db",salary "sal" from employee;
+select fname,dob,salary from employee where salary>=20000 and salary<=30000;
+select fname,dob,salary from employee where salary between 20000 and 30000;
+select fname,dob,salary from employee where salary>=20000 and salary<=30000;
+select fname,dob,salary from employee where salary in(10000,20000,70000);
+select fname,dob,salary from employee where salary not in(10000,20000,70000);
+select fname,dob,salary from employee order by salary;
+select fname,dob,salary from employee order by salary desc;
+select fname,dob,salary from employee where salary>20000;
+select fname,dob,salary from employee where salary>20000 order by salary;
+select fname,dob,salary from employee where salary>20000 order by salary desc;
+select * from employee where fname like 'N%';
+select * from employee where fname like 'R__';
+select * from employee where fname like '%a%';
+select * from employee where fname like '%j%';
+select * from employee where dob<'1-nov-03' and salary>10000;
+select * from employee order by salary,deptno;	
+select fname,dob,salary from employee order by 1;
+
+create table dept1(
+	eptno number(5)primary key,
+	eptname varchar2(20),
+	eptloc varchar2(20)
+);	

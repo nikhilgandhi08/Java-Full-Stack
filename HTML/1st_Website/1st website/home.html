@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .navbar{
+        
+       background-color:rgb(51,56,77);
+       padding: 15px;
+       position: sticky;
+    }
+
+    .contact ul{
+       
+       list-style: none;
+    }
+    .contact ul li{
+        padding-left: 10px;
+    }
+
+    
+    .navbar ul a:hover{
+        color: rgba(161, 140, 89, 0.958);
+    }
+    
+    .navbar ul{
+        display: flex;
+        justify-content: end;
+        list-style: none;
+        
+    }
+
+
+    .navbar ul li a{
+        color: white;
+        text-decoration: none;
+        padding-left: 30px;
+        transition: 0.4s ease-in-out;
+
+    }
+
+
+    div.sticky{
+        position:-webkit-sticky ;
+        position: sticky;
+        top:0;
+    }
+
+
+    #home{
+    height: 100vh;
+    background: url("https://imgs.search.brave.com/mqz6Z4awlth5mQtjNajScOTEmTW-kyHOS07lY2mbsbA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE0/ODE2Mjc4MzQ4NzYt/Yjc4MzNlOGY1NTcw/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRSOGZI/ZGxZbk5wZEdVbE1q/QmpiM1psY254bGJu/d3dmSHd3Zkh4OE1B/PT0")no-repeat;
+    background-size: cover;
+    display: flex;
+    font-size:100;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+    }
+
+
+    .grid{
+        display: flex;
+        
+        justify-content: space-evenly;
+        padding: 20px;
+    }
+
+
+    #gallery{
+        padding: 30px;
+    }
+
+
+    #aboutus{
+        background-color: rgb(51,56,77);
+        color: white;
+
+    }
+
+    .about{
+        padding: 10px;
+    }
+
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+</style>
+
+<body>
+    <div class="sticky">
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="shop.html">Shop</a>
+                </li>
+                <li>
+                    <a href="#aboutus">About us</a>
+                </li>
+                <li>
+                    <a href="#aboutus">Contact</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+    <section id="home">
+        <p><b>Home page</b></p>
+    </section>
+
+    <section id="gallery">
+       <center> <h1><i>Our Best Sellers</i></h1></center>
+    <center>
+
+     <div class="grid">      
+            <div>  
+                    <img src="https://imgs.search.brave.com/59TTNaWfuAqlUeyyuJaWL-C30c47efoutk6Ibp0cEz4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFEYW9k/aVhDSUkvMS8wLzEw/MDN3L2NhbnZhLXBo/b3RvLXdpdGgtdGV4/dC1vdmVybGF5LWF1/dG9iaW9ncmFwaHkt/Ym9vay1jb3Zlci1U/S3RidnpIY2h5dy5q/cGc" alt="" height="250px" width="200px">
+            </div>      
+            <div>               
+                    <img src="https://imgs.search.brave.com/Xb3ZKT4nSx9_n-9ezGsIaCwYqjHLzVZ6sTAZB5oPZ8w/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFEYXBN/NDJJQk0vMi8wLzEw/MDN3L2NhbnZhLXJl/ZC1waG90by1zY2ll/bmNlLWZpY3Rpb24t/Ym9vay1jb3Zlci1C/TVhSWkhGMlZxay5q/cGc" alt="" height="250px" width="200px">                                  
+            </div>
+            <div>               
+                    <img src="https://imgs.search.brave.com/xvMHAicAjVvz1dKNp3B6YcHo2VZGc0oT9JrDHjwlPW0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFEYWo0/a0ZobzgvMS8wLzEw/MDN3L2NhbnZhLXJl/ZC1waG90by1waG90/b2dyYXBoeS1ib29r/LWNvdmVyLVdZR2hG/T1B6V1VVLmpwZw" alt="" height="250px" width="200px">                                    
+            </div>
+     </div>  
+       
+     <div class="grid">
+            <div>                
+                    <img src="https://imgs.search.brave.com/VpUtMG44p5V2XjgPRy1AlPzq0u4AfRbCmszikT-4Scw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFEYXBK/NGRVWGMvMS8wLzEw/MjR3L2NhbnZhLWxh/bmRzY2FwZS1waG90/by1wcmF5ZXItam91/cm5hbC1ib29rLWNv/dmVyLTRlRTlFWTZv/TDJnLmpwZw" alt="" height="250px" width="200px">                                    
+            </div>
+            <div>          
+                    <img src="https://imgs.search.brave.com/R5hKxP2PLGL5NjxvoS6sfW3KrpH5OUwVz-6GLZHR8Aw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFEN1dt/UXpNVVEvMi8wLzEw/MDN3L2NhbnZhLW1v/b24tcGhvdG8tdGhy/aWxsZXItbXlzdGVy/eS1ib29rLWNvdmVy/LVFFN3V2N1lTd0RR/LmpwZw" alt="" height="250px" width="200px">                    
+            </div>
+            <div>              
+                    <img src="https://imgs.search.brave.com/lU8SqKQUn9tLIhNV-niYRBKWcyumPpg-hEa2Yyc1RDY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFEYXBB/ekFJVDAvMS8wLzEw/MDN3L2NhbnZhLXdo/aXRlLXNlYS1waG90/by1ib29rLWNvdmVy/LTdGQ1Zqbk1rMWtv/LmpwZw" alt="" height="250px" width="200px">                                
+            </div>
+    
+    </div>
+
+    </center>
+              
+    </section>
+
+    <section id="aboutus">
+        <i>
+            <div class="about">
+                <h1><i><u>About us</u></i></h1><br>
+            <p>Welcome to [Your Book Heaven]!!!<br> Your literary sanctuary since 2010! At our core, we are a team of book enthusiasts who embarked on this journey over a decade <br>With a deep love for literature, we've been curating and sharing captivating stories to make your reading experience memorable. <br> Join us in celebrating a decade of passion for books and discover a world of endless tales.</p>
+            <br>
+            </div>
+            <div class="contact">
+                <h1><b><i><u>Contact Info:</u></i></b></h1>
+                <ul>
+                    <i>
+                        <li>
+                            Phone:234564310
+                        </li>
+                        <li>
+                            Email:bookworld@gmail.com
+                        </li>
+                        <li>
+                            <i>Visit us at [Your Book Heaven] 
+                                123 Reading Lane,
+                                Bookland City, BL 56789,
+                                United Pages</i>
+                            
+                        </li>
+                    </i>
+                </ul>
+            </div>
+        </i>
+    </section>
+   
+</body>
+</html>

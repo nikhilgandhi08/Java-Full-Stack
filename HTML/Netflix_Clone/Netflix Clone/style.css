@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:rgb(35,35,35);
+    color: white;
+}
+
+.header{
+    width: 95.859%;
+    height: 93vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(header-image.png);
+    background-size: cover;
+    position: relative;
+    padding: 24px 32px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav button{
+    padding: 0;
+    outline: 0;
+    border: 0;
+    color: white;
+    background: rgb(216,31,38);
+    border-radius: 4px;
+    padding: 7px 20px;
+    cursor: pointer;
+    
+}
+
+nav .logo{
+    width: 150px;
+    cursor: pointer;
+}
+#lang{
+    display: inline-flex;
+    background: transparent;
+    border: 1px solid white;
+    align-items: center;
+    padding: 7px 10px;
+}
+
+#lang img{
+    width: 10px;
+    margin-left: 10px;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.content h1{
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content h3{
+    margin: 16px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.content p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.sign{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.getstarted button img{
+    width: 10px;
+    margin-left: 10px;
+}
+
+.email input{
+    padding: 15px ;
+    border-radius: 4px;
+    background: transparent;
+    margin-right: 10px;
+    width: 250px;
+    color: white;
+
+}
+
+.getstarted button{
+    outline: 0;
+    border: 0;
+    color: white;
+    background: rgb(216,31,38);
+    border-radius: 4px;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.feature{
+    padding: 50px 12%;
+    background: black;
+}
+.sec1{
+    display: flex;
+    align-items: center;
+}
+
+.p1{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.p1 h1{
+    font-size: 50px;
+}
+.p1 p{
+    font-size: 18px;
+}
+.p2 img{
+    flex-basis: 50%;
+    width: 90%;
+}
+
+.FAQ {
+    margin-top: 50px;
+    padding: 10px 12%;
+    text-align: center;
+}
+
+.FAQ h1{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.que{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+   
+}
+
+.que li{
+    list-style: none;
+    padding: 5px;
+    width: 100%;
+    
+}
+
+.que li label{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 30px;
+    width: 900px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+label::after{
+    content: '+';
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.que .contain{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    width: 920px;
+    transition: max-height 0.5s , padding 0.5s;
+}
+
+.que input[type="radio"]:checked +label + .contain{
+    max-height: 600px;
+    padding: 30px 20px;
+    font-size:18px;
+}
+
+.que input[type="radio"]:checked +label::after{
+    transform: rotate(135deg);
+}
+
+.FAQ small{
+    font-size: 18px;
+}
+
+#email{
+    background: transparent;
+    padding: 16px;
+    width: 8cm;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+#button{
+    background: rgb(216,31,38);
+    padding: 14px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+}
+
+#button img{
+    width: 10px;
+    margin-left: 10px; 
+}
